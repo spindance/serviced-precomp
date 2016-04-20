@@ -1,0 +1,49 @@
+<p>
+    <span translate>label_username</span>:&nbsp;{{cookies.ZUsername}}</p>
+<div class="btn-group" ng-controller="LanguageController">
+  <label ng-class="getLanguageClass('en_US')">
+    <input type="radio" name="user_language" ng-change="setUserLanguage()" ng-model="user.language" value="en_US">English</input>
+  </label>
+  <label ng-class="getLanguageClass('es_US')">
+    <input type="radio" name="user_language" ng-change="setUserLanguage()" ng-model="user.language" value="es_US">Español</input>
+  </label>
+</div>
+
+<hr>
+<div class="messagesTitle">
+    <div class="pull-left" translate>label_messages</div>
+    <div class="clearLink pull-right action" ng-click="clearMessages()">
+      <i class="glyphicon glyphicon-trash"></i>
+      <span translate>label_clear</span>
+    </div>
+    <br style="clear: both;"/>
+</div>
+<ul class="well list-group">
+    <li class="list-group-item" ng-repeat="message in messages.messages track by message.id">
+        <div ng-if="message.read < message.count" class="message unreadMessage" ng-click="markRead(message)">
+
+	    <span class="messageMeta">
+                <span class="messageCounter">{{ message.count - message.read > 1 ? message.count - message.read : ""}}</span>
+                <i class="glyphicon glyphicon-envelope"></i>
+                <span class="date">{{message.date | date : 'medium'}}</span>
+            </span>
+            <span class="messageBody">
+		<span class="title">{{message.title}}:</span>
+                <span class="message">{{message.msg}}</span>
+            </span>
+	    <div class="clearfix"></div>
+        </div>
+        <div ng-if="message.read >= message.count" class="message readMessage">
+	    <span class="messageMeta">
+                <span class="messageCounter"></span>
+                <i class="glyphicon glyphicon-ok"></i>
+                <span class="date">{{message.date | date : 'medium'}}</span>
+	    </span>
+	    <span class="messageBody">
+	            <span class="title">{{message.title}}:</span>
+        	    <span class="message">{{message.msg}}</span>
+            </span>
+	    <div class="clearfix"></div>
+        </div>
+    </li>
+</ul>

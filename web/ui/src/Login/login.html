@@ -1,0 +1,9 @@
+<div class="container login-container">
+  <form id="login" class="form-signin {{extra_class}}" ng-submit="login()" form-autofill-fix>
+    <img class="loginLogo" src="static/img/theMcKrakenLogo.png" style="padding: 0 0 35px;">
+    <input type="text" ng-model="username" class="form-control" placeholder="Username" autofocus required>
+    <input type="password" ng-model="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-block btn-primary" type="submit" ng-disabled="loginDisabled" translate>{{loginButtonText}}</button>
+  </form>
+  <div id="loginNotifications"></div>
+</div>

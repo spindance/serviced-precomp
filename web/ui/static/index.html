@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" lang="en" id="ng-app" ng-app="controlplane">
+  <head>
+
+    <!-- force IE to standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{'brand_zcp'|translate}}">
+    <meta name="author" content="Zenoss">
+
+    <link rel="icon" href="static/ico/favicon.png">
+    <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+
+    <title>Control Center</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="/static/lib/jquery-ui/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="/static/lib/jquery-datetimepicker/jquery.datetimepicker.css" rel="stylesheet" />
+    <link href="/static/lib/ng-table/ng-table.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/main.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/static/lib/codemirror/lib/codemirror.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/lib/bootstrap/assets/js/html5shiv.js"></script>
+    <script src="/static/lib/bootstrap/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/metrics/static/performance/query/visualization.js"></script>
+    <script src="/metrics/static/performance/query/jstz-1.0.4.min.js"></script>
+    <script src="/metrics/static/performance/query/sprintf.min.js"></script>
+    <script src="/metrics/static/performance/query/moment.min.js"></script>
+    <script src="/metrics/static/performance/query/moment-timezone.js"></script>
+
+    <script src="/static/lib/thirdparty.js"></script>
+
+    <script src="/static/js/controlplane.js"></script>
+  </head>
+  <body class="loading">
+
+    <div class='loading_wrapper'>
+        <div class="animated_logo">
+            <img style="width: 150px; height: 175px;" src="static/img/loading2.gif">
+            <div class="loading_body">One Moment Please...</div>
+        </div>
+    </div>
+
+    <div class="container" ng-view>
+
+    </div> <!-- /container -->
+  </body>
+</html>

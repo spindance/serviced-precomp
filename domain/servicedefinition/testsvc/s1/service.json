@@ -1,0 +1,50 @@
+{
+          "Command": "/usr/bin/python -m SimpleHTTPServer",
+          "Endpoints": [{
+              "Name": "www",
+              "Application": "www",
+              "PortNumber": 8080,
+              "Protocol": "tcp",
+              "Purpose": "export",
+              "AddressConfig": {
+                              "Port": 1000,
+                              "Protocol": "tcp"
+                          }
+            },{
+              "Name": "websvc",
+              "Application": "websvc",
+              "PortNumber": 8081,
+              "Protocol": "tcp",
+              "Porpose": "import"
+            }
+          ],
+          "ImageID": "ubuntu",
+          "Instances": {
+            "min": 1
+          },
+          "ConfigFiles": {
+            "/etc/my.cnf":  { "Owner": "root:root", "Filename": "/etc/my.cnf", "Permissions": "0660", "Content": "\n# SAMPLE config file for mysql\n\n[mysqld]\n\ninnodb_buffer_pool_size = 16G\n\n"}
+          },
+          "LogConfigs":[ {
+            "path": "/tmp/foo",
+            "type": "foo"
+          }],
+          "Snapshot": {
+            "Pause": "echo pause",
+            "Resume": "echo resume"
+          },
+          "Volumes": [{
+            "Owner": "zenoss:zenoss",
+            "Permission": "0777",
+            "ResourcePath": "test1",
+            "ContainerPath": "/test1",
+            "Type": "",
+            "InitContainerPath": "/initFromHere"
+          },{
+            "Owner": "zenoss:zenoss",
+            "Permission": "0777",
+            "ResourcePath": "test2",
+            "ContainerPath": "/test2",
+            "Type": ""
+          }]
+}
