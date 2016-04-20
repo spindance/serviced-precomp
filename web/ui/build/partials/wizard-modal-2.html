@@ -1,0 +1,21 @@
+  <p translate>content_wizard_select_apps</p>
+  <div>
+    <table class="table" ng-model="templates.data" style="min-width: inherit;">
+        <tr>
+            <th>&nbsp;</th>
+            <th translate>label_app_name</th>
+            <th translate>memory_required</th>
+        </tr>
+        <tr ng-repeat="template in templates.data | orderBy: 'Name'" ng-class="install.templateClass(template)" ng-click="selectTemplate(template)" class="clickable">
+            <td><input type="radio" ng-model="install.templateID" name="selected_template" id="selected_template_{{$index}}" ng-value="template.ID"></td>
+            <td>{{template.Name}}<span class="version" ng-show="template.Version"> (v{{template.Version}})</span></td>
+            <td>{{getTemplateRequiredResources(template).RAMCommitment | toGB}}</td>
+        </tr>
+    </table>
+
+    <div id="deployWizardNotifications" class="error hide">
+        <span class="dialogIcon glyphicon glyphicon-remove-sign"></span>
+        <span id="deployWizardNotificationsContent"></span>
+    </div>
+  </div>
+

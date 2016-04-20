@@ -1,0 +1,1933 @@
+/*
+    good: #0084DB
+    bad: #9C1200;
+    light good: #B2E0FF
+
+    action/link: #325385;
+    action/link hover: #4F83D1;
+    action/link active: #8EA9D1;
+
+    header bar: #516685;
+    header bar secondary: #8090A8;
+    header bar tertiary: #C1CEE0;
+
+    zebra stripe bg: #F0F3F7;
+
+ */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto-regular-webfont.eot');
+    src: url('../fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-regular-webfont.woff') format('woff'),
+         url('../fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-regular-webfont.svg#Roboto') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto-bold-webfont.eot');
+    src: url('../fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-bold-webfont.woff') format('woff'),
+         url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-bold-webfont.svg#Roboto') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* disable breakpoints */
+@media (min-width: 768px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+html, body, .container { height: 100%; }
+
+body {
+    padding: 20px;
+    color: #666;
+    font-family: "Roboto";
+}
+
+textarea {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+a, .btn-link {
+    text-decoration: none;
+    color: #404040;
+    cursor: pointer;
+}
+a:hover, a:active, a:focus,
+.btn-link:hover, .btn-link:active, .btn-link:focus {
+    color: #404040;
+    text-decoration: none;
+    outline: 0;
+}
+
+.link {
+    cursor: pointer;
+    color: #325385;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #4F83D1;
+}
+.link:active {
+    color: #8EA9D1;
+}
+
+.action {
+    font-weight: bold;
+    cursor: pointer;
+    color: #325385;
+    text-decoration: none;
+    padding-top: 0;
+    padding-left: 0;
+}
+.action:hover {
+    color: #4F83D1;
+}
+.action:active {
+    color: #8EA9D1;
+}
+.action[disabled="disabled"],
+.action.disabled {
+    text-decoration: none;
+    color: #777 !important;
+}
+
+.inline-code {
+    font-family: monospace;
+    color: #888;
+    font-size: 0.85em;
+}
+
+table > thead {
+    background-color: #516685;
+    color: #ffffff;
+}
+
+table > thead.light {
+    background-color: white;
+    color: #999;
+}
+
+.table {
+    margin-bottom: 10px;
+    /* tables usually have headings and/or actions
+        which are floated and must be cleared */
+    clear: both;
+}
+
+.table-bordered > thead > tr > th {
+    border: 0px;
+}
+
+.table > tbody > tr:hover > td {
+    background-color: #F0F3F7;
+}
+
+.table-bordered {
+    border-left: 0px;
+    border-top: 0px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    border-bottom: solid 1px #DCE1E8;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #ddffdd;
+}
+
+.toggle .btn.active {
+    padding-right: 10px;
+}
+table .btn,
+.toggle .btn {
+    border-radius: 15px;
+    line-height: .8;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.toggle.btn-group .btn + .btn,
+.toggle.btn-group .btn + .btn-group,
+.toggle.btn-group .btn-group + .btn,
+.toggle.btn-group .btn-group + .btn-group {
+    margin-left: -11px;
+}
+
+.toggle.btn-group > .btn.off:last-child:not(:first-child) {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-color: #3C91C9;
+    padding-right: 20px;
+    z-index:3;
+}
+
+.toggle.btn-group > .btn.active:last-child:not(:first-child) {
+    padding-left: 15px;
+}
+
+.toggle.btn-group > .btn.off:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-color: #999;
+    padding-right: 20px;
+    z-index:3;
+}
+
+.toggle.btn-group > .btn.active:first-child:not(:last-child):not(.dropdown-toggle) {
+    padding-right: 15px;
+}
+
+.toggle.btn-group .btn-danger {
+    background-color: #999;
+    border-color: #999;
+}
+.toggle.btn-group .btn-success {
+    background-color: #3C91C9;
+    border-color: #3C91C9;
+}
+
+.btn-group > .btn > input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: radio-label;
+}
+
+.table-bordered.side-flush > thead > tr > th,
+.table-bordered.side-flush > tbody > tr > th,
+.table-bordered.side-flush > tfoot > tr > th,
+.table-bordered.side-flush > thead > tr > td,
+.table-bordered.side-flush > tbody > tr > td,
+.table-bordered.side-flush > tfoot > tr > td {
+    border-left: 0px;
+}
+
+.navbar-zen {
+    background-color: #6b6b6b;
+    color: #f6f6f6;
+}
+.navbar-secondary {
+    height: 30px;
+    background-color: #f5f5f5;
+    margin-left: 15px;
+}
+
+.navbar-zen .main-nav button,
+.navbar-zen .main-nav a {
+    padding: 15px;
+    margin: 0px;
+    border: 0px;
+    color: #CCC;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #414141;
+}
+
+.navbar-zen .main-nav a.glyphicon {
+    top: 0px;
+}
+
+.navbar-zen .main-nav li.active > button,
+.navbar-zen .main-nav li.active > a {
+    color: #F6F6F6;
+    background-color: #515151;
+}
+
+.navbar-zen .main-nav a.navbar-brand:hover,
+.navbar-zen .main-nav li > button:hover,
+.navbar-zen .main-nav li > a:hover {
+    background-color: #969696;
+    color: #f6f6f6;
+}
+
+.navbar-brand {
+    width: 153px;
+    background-color: #516685;
+    border-right: solid white 4px;
+}
+.navbar-brand .logoType {
+    position: absolute;
+    top: 7px;
+    left: 48px;
+}
+.navbar-brand .logoCircle{
+    background-color: white;
+    border-radius: 100px;
+    border: solid 4px #516685;
+    position: absolute;
+    top: -8px;
+    left: -24px;
+    z-index: 1000;
+}
+
+.navbar-zen .main-nav .navbar-right button{
+    font-weight: normal;
+    color: #EEE;
+    font-size: .9em;
+    line-height: 1.6em;
+}
+
+.navbar-zen .main-nav .navbar-right .vr{
+    font-weight: normal;
+    color: #888;
+    font-size: .9em;
+    line-height: 1.6em;
+    padding: 15px 4px;
+}
+
+.nav > li > .item {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+}
+
+.navbar-inverse li .item {
+    color: #999999;
+}
+
+.navbar {
+    margin: 10px 0 30px 0;
+    border-radius: 0;
+    border: 0;
+}
+
+.item > i {
+    margin: 0px 5px;
+    color: #4d4d4d;
+    text-shadow: -1px -1px 0px #414141;
+}
+
+.navbar-nav > li.item {
+    padding: 10px;
+    line-height: 20px;
+    text-shadow: 1px 1px 2px #414141;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav > li.item {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .big.modal-dialog,
+    .wizard.modal-dialog {
+        width: 1024px;
+    }
+    .big textarea {
+        width: 960px;
+        min-height: 500px
+    }
+}
+
+.btn-primary{
+    background-color: #325385;
+    border-color: #555;
+}
+.btn-primary[disabled],
+.btn-primary[disabled]:hover{
+    opacity: 0.65;
+    background-color: #6b6b6b;
+    border-color: #555;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    border-color: #0084DB;
+    background-color: #4F83D1;
+}
+
+.details {
+    background-color: #f5f5f5;
+}
+
+.breadcrumb {
+    margin: 0px 15px;
+    padding: 8px 0px;
+    border-radius: 0;
+}
+.breadcrumb.bordered {
+    border-bottom: 1px solid #d0d0d0;
+}
+.breadcrumb.inline > li + li:before {
+    padding: 0 5px;
+    color: #cccccc;
+    content: "\00a0/"; /* reverse order of space and separator */
+}
+.breadcrumb .crumb {
+    color: #AAA;
+}
+.breadcrumb .crumb:hover {
+    color: #666;
+}
+.breadcrumb .crumb.current {
+    font-weight: bold;
+    color: #666;
+}
+
+.highlighted {
+    background-color: #d0d0d0;
+    font-weight: bold
+}
+
+.box {
+    padding: 40px 50px;
+    background-color: #eeeeee;
+    border-radius: 6px;
+}
+.page-nav {
+    padding-top: 40px;
+}
+table .glyphicon {
+}
+.sort.active {
+    color: white !important;
+}
+.sort:hover {
+    color: #DDD !important;
+}
+.sort {
+    color: #8197B8 !important;
+}
+.form-signin {
+    width: 500px;
+    margin: 60px auto 0;
+    padding: 61px;
+    background-color: white;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.4);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.login-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/theMcKrakenBG1.png") #516685;
+}
+.nav-tree {
+    list-style: none;
+    padding: 0px 0px 0px 20px;
+}
+
+.nav-tree > li {
+    display: block;
+    padding: 6px;
+}
+
+.nav-tree > li.current {
+    background-color: #a8bcd9;
+    color: #ffffff;
+}
+
+.nav-tree > li.active,
+.nav-tree > li:hover {
+    background-color: #b8cce9;
+}
+
+
+.extended {
+    visibility: hidden;
+}
+li:hover > .extended {
+    visibility: inherit;
+}
+li.current > .extended {
+    visibility: inherit;
+}
+.tempvis.extended {
+    visibility: inherit;
+}
+
+.nav-tree.root {
+    padding: 0px;
+}
+
+.sidebar-nav > h4 .btn-link {
+    text-decoration: none;
+    padding: 6px;
+}
+.sidebar-nav > h4 a:hover,
+.sidebar-nav > h4 a:focus,
+.sidebar-nav > h4 .btn-link:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+td.deploy-success {
+    color: #0084DB;
+}
+td.deploy-error {
+    color: #9C1200;
+}
+td.deploy-info {
+    color: #3a87ad;
+}
+td.deploy-warning {
+    color: #c09853;
+}
+
+.details > .details-control {
+    padding: 5px;
+}
+.details > .details-actions {
+    padding: 0px 15px 8px 15px;
+}
+
+.add-control {
+    padding: 2px 5px;
+    font-size: 14px;
+    line-height: 1.7;
+    display: inline-block;
+    background-color: #e1e1e1;
+    border-radius: 6px;
+    vertical-align: top;
+}
+
+.add-control:hover {
+    background-color: #f0f0f0;
+}
+
+.add-control > .btn-link {
+    color: #404040;
+    padding: 0;
+    line-height: 1;
+}
+
+.deployed.alert {
+    font-weight: bold;
+}
+
+.deployed.alert > a {
+    text-decoration: underline;
+}
+
+li.active > .pool-data {
+    background-color: #eeeeee;
+}
+
+.sidebar-nav.flow {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar-nav > div {
+    padding: 7px 15px;
+}
+
+.sidebar-nav > .top-info {
+    background-color: #8090A8;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.sidebar-nav .btn-link,
+.sidebar-nav a {
+    color: #4c6c99;
+    font-weight: bold;
+}
+
+.sidebar-nav .current a.main {
+    color: #ffffff;
+}
+
+.nav-tree > li .pool-data:hover,
+.nav-tree > li .pool-data:focus {
+     background-color: #a7bbd9;
+}
+
+.sidebar-nav a.main:hover,
+.sidebar-nav a.main:focus {
+    text-decoration: none;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.sidebar-nav > .top-head a,
+.sidebar-nav > .top-head .btn-link {
+    color: #595959;
+}
+
+.sidebar-nav > .top-head:hover {
+    background-color: #b8cce9;
+}
+
+.sidebar-nav > .top-head a:hover,
+.sidebar-nav > .top-head .btn-link:hover {
+    color: #ffffff;
+}
+
+.dropdown-menu > li > a {
+    display: block;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #c0c0c0;
+}
+
+.glyphicon.spacer:before {
+    content: "\00a0";
+}
+.disabled {
+    opacity: 0.65;
+}
+
+div.side-flush {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+div.top-bar {
+    margin: 0px;
+    background-color: #516685;
+    color: #d7e0ed;
+    padding: 4px;
+}
+
+.top-bar .nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d7e0ed;
+    padding: 0px 10px;
+}
+.top-bar .nav-link.active,
+.top-bar label.active {
+    font-size: 16px;
+    padding: 0px 10px;
+    margin: 2px 0 3px 0;
+    background-color: #C1CEE0;
+    color: #325385;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.deployed.alert {
+    margin-bottom: 0;
+}
+
+input.search {
+    font-size: 14px;
+    border-radius: 15px;
+    height: 27px;
+    /*line-height: 1.0;*/
+}
+
+input.instances {
+    width: 70px;
+}
+input.startup {
+    width: 320px;
+}
+
+.search-control label {
+    margin: 0px;
+}
+
+.details-control .alert,
+.search-control .alert {
+    padding: 2px 5px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 10px;
+}
+
+.close {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-left: 10px;
+}
+
+.search.form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+}
+
+.vertical-info {
+    flex: 1 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    border-right: solid 1px #EEE;
+    margin-right: 7px;
+}
+.vertical-info:last-of-type {
+    border: none;
+}
+.vertical-info > label {
+    display: block;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+
+.wizard ol {
+    list-style: none;
+    padding: 0px;
+}
+
+.wizard li > label {
+    display: block;
+    font-size: 20px;
+    position: relative;
+    left: -25px;
+    color: #4c6c99;
+}
+
+.wizard li > label:before {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-right: 5px;
+    content: "\00a0";
+}
+
+.wizard li.current {
+    background-color: #a8bcd9;
+    color: #ffffff;
+}
+.close {
+    opacity: 0.4;
+}
+
+.wizard li.inactive {
+    opacity: 0.4;
+}
+
+.wizard li > label.done:before {
+    color: #468847;
+    content: "\e013";
+}
+
+.wizard li {
+    padding: 10px 30px;
+}
+
+.wizard .block-data {
+    padding: 6px 0px;
+    display: block;
+}
+
+.indented {
+    margin-left: 20px;
+}
+.indent0 {
+    margin-left: 0;
+}
+.indent1 {
+    margin-left: 20px;
+}
+.indent2 {
+    margin-left: 40px;
+}
+.indent3 {
+    margin-left: 60px;
+}
+.indent4 {
+    margin-left: 80px;
+}
+.indent5 {
+    margin-left: 100px;
+}
+.indent6 {
+    margin-left: 120px;
+}
+.indent7 {
+    margin-left: 140px;
+}
+.indent8 {
+    margin-left: 160px;
+}
+.indent9 {
+    margin-left: 180px;
+}
+.indent10 {
+    margin-left: 200px;
+}
+
+.wizard .modal-body {
+    padding: 0px 20px 0px 15px;
+}
+
+.modal-header {
+    background-color: #a0a0a0;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.modal-title {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #c0c0c0;
+    color: #1a1a1a;
+}
+.modal-notify {
+    position: relative;
+}
+
+.flow {
+    background-color: #F0F3F7;
+    min-height: 600px;
+    border-right: 1px solid #949494;
+}
+.wizard .flow {
+    padding: 0px;
+}
+
+.wizard .scroll {
+    height: 550px;
+    overflow-y: auto;
+}
+
+.wizard .content {
+    border-left: 1px solid black;
+    background-color: #ffffff;
+    min-height: 600px;
+}
+
+.wizard .content > .scroll {
+    padding-top: 20px;
+}
+
+.rotate-down {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    writing-mode: lr-tb;
+}
+
+.medChart{
+    position: relative;
+    height: 200px;
+}
+
+.noData {
+  margin: auto;
+  top: 40px;
+  color: #AAA;
+  text-align: center;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+/* Visualization.js style changes */
+/* d3 related below */
+
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  position: absolute;
+  text-indent: 2px;
+}
+
+.treemap {
+    position: relative;
+
+}
+
+/* dagre-d3 related below  */
+
+.service_map_wrap {
+    position: relative;
+    height: calc(100% - 140px);
+}
+.service_map_wrap .service_map,
+.service_map_wrap .service_map_loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0px;
+  width: 1140px;
+  height: 100%;
+  border: solid #CCC 1px;
+}
+.service_map_wrap .service_map_loader {
+    background-color: rgba(255,255,255,0.9);
+}
+.service_map_loader .message {
+    text-align: center;
+    position: relative;
+    top: calc(50%);
+    transform: translateY(-50%);
+}
+
+.last_update {
+    font-size: 0.9em;
+    color: #CCC;
+    text-align: right;
+}
+.last_update strong {
+    font-weight: bold;
+    color: #888;
+}
+
+.service_map rect {
+  fill: #fff;
+}
+
+.service_map .node rect {
+  stroke-width: 0;
+  fill: #EEE;
+}
+
+.service_map .edgePath rect {
+  fill: #fff;
+}
+
+.service_map .edgePath path {
+  fill: none;
+  stroke: #888;
+  stroke-width: 1px;
+}
+
+.service_map .edgePath marker path {
+    fill: #888;
+}
+
+.service_map .node.host rect {
+    fill: #0084DB;
+    border-radius: 50%;
+}
+.service_map .node.host text {
+    fill: white;
+}
+
+.service_map .node.service.running rect {
+    fill: #0084DB;
+}
+.service_map .node.service.running.bad rect {
+    fill: #9C1200;
+}
+
+.service_map .node.service rect {
+    fill: #AAA;
+}
+
+.service_map .node.service.meta rect {
+    fill: white;
+    stroke: #999;
+    stroke-width: 1px;
+}
+.service_map .node.service.meta text {
+    fill: #777;
+}
+
+.service_map .node.service text {
+    fill: white;
+}
+
+.control-buttons {
+    margin-top: 20px;
+}
+
+/* health and status popover content */
+.popover{
+    max-width: none;
+    line-height: 1.5;
+}
+
+.popover table{
+    white-space: nowrap;
+}
+.popover .healthTooltipDetailRow {
+    position: relative;
+    font-size: 12px;
+}
+.popover .healthTooltipDetailRow .healthTooltipDetailName {
+    display: inline-block;
+}
+.popover .healthTooltipDetailRow .healthIcon {
+    top: 1px;
+    font-size: 15px;
+}
+.popover .healthTooltipDetailRow .healthTooltipDetailName {
+    padding-left: 18px;
+}
+
+
+.chartContainer {
+  position: relative;
+}
+
+.nvtooltip h3{
+    font-size: 12px;
+}
+
+.nvtooltip p{
+    font-weight: bold;
+}
+
+
+/* bootstrap override */
+.bg-primary{
+    background-color: #6b6b6b;
+}
+
+.btn-link {
+    font-weight: bold;
+    color: #325385;
+}
+.btn-link:hover {
+    color: #4F83D1;
+}
+.btn-link.minor {
+    color: #888;
+}
+
+.btn-danger {
+    background-color: #9C1200;
+    border-color: #9C1200;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.navbar-nav > li:last-child > button{
+    padding-right: 15px;
+}
+
+.navWrapper {
+    position: relative;
+}
+
+/* force stuff to stay 1140px or wider */
+.table,
+.details,
+.navbar-zen,
+.infoWrapper {
+    min-width: 1140px;
+}
+
+/* speed up bootstrap modals */
+.fade {
+   opacity: 0;
+   -webkit-transition: opacity .15s ease-out;
+      -moz-transition: opacity .15s ease-out;
+       -ms-transition: opacity .15s ease-out;
+        -o-transition: opacity .15s ease-out;
+           transition: opacity .15s ease-out;
+ }
+ .modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .15s ease-out;
+     -moz-transition:    -moz-transform .15s ease-out;
+       -o-transition:      -o-transform .15s ease-out;
+          transition:         transform .15s ease-out;
+}
+/* make modal content scroll when too tall */
+.modal-body {
+    max-height: 600px;
+    overflow-y: auto;
+}
+.modal {
+    overflow: auto;
+}
+/* make modal submit button resize nicely */
+.modal .submit {
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    transition: width 0.5s;
+    /* set min width to avoid funky size transitions
+     * when text content changes to "Submitting..." */
+    min-width: 110px;
+}
+.modal .modal-footer .glyphicon {
+    top: 2px;
+}
+.modal .modal-footer .btn-primary .glyphicon {
+    padding-right: 8px;
+}
+
+/* notifications */
+
+/* this is the main notification holder */
+#notifications {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 999;
+}
+
+#loginNotifications {
+    width: 500px;
+    margin: auto;
+    position: relative;
+    top: -4px;
+}
+
+.notification {
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: rgba(0,0,0,0.4) 0 3px 1px;
+}
+
+.notification > *{
+    vertical-align: middle;
+}
+.notification .close {
+    position: absolute;
+    padding: 15px;
+    top: 7px;
+    right: 0;
+}
+
+/* notification icons */
+.notification .dialogIcon {
+    font-size: 1.2em;
+    top: -1px;
+}
+
+.notification .title{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.notification .message {
+    padding-left: 10px;
+}
+
+.notification.bg-info .dialogIcon {
+    color: #7890b6;
+}
+.notification.bg-success {
+    background-color: #B2E0FF;
+}
+.notification.bg-success .dialogIcon {
+    color: #0084DB;
+}
+.notification.bg-danger .dialogIcon {
+    color: #7A0000;
+}
+
+/* animate dialogIcon to show that it's working */
+.notification.bg-info .dialogIcon {
+    animation: throb 3s infinite;
+    -webkit-animation: throb 3s infinite;
+    -moz-animation: throb 3s infinite;
+}
+@keyframes throb {
+  0%   { opacity: 1; }
+  10%  { opacity: .5;}
+  20% { opacity: 1; }
+}
+@-webkit-keyframes throb {
+  0%   { opacity: 1; }
+  10%  { opacity: .5;}
+  20% { opacity: 1; }
+}
+@-moz-keyframes throb {
+  0%   { opacity: 1; }
+  10%  { opacity: .5;}
+  20% { opacity: 1; }
+}
+
+/* NOTIFICATION OVERRIDES */
+.modal-notify .notification {
+    position: relative;
+    box-shadow: rgba(0,0,0,0.4) 0 0px 4px inset;
+}
+
+
+.spinner {
+    display: inline-block;
+    opacity: 0;
+    width: 0;
+
+    -webkit-transition: opacity 0.25s, width 0.25s;
+    -moz-transition: opacity 0.25s, width 0.25s;
+    -o-transition: opacity 0.25s, width 0.25s;
+    transition: opacity 0.25s, width 0.25s;
+}
+
+.has-spinner.active {
+    cursor:progress;
+}
+
+.has-spinner.active .spinner {
+    opacity: 1;
+    width: auto; /* This doesn't work, just fix for unkown width elements */
+}
+
+.has-spinner.active .spinner {
+    opacity: 1;
+    width: 16px;
+    max-width: 50px; /* More than it will ever come, notice that this affects on animation duration */
+}
+
+.icon-spin {
+    display: inline-block;
+    -moz-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+
+.clearLink{
+    cursor: pointer;
+}
+
+.messagesTitle{
+    margin-bottom: 10px;
+}
+.unreadMessage{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.message .glyphicon{
+    margin-right: 7px;
+}
+
+.messageCounter {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+    background-color: #AAA;
+    color: white;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.readMessage .glyphicon{
+    color: #CCC;
+}
+
+
+health-icon {
+    display: block;
+    position: relative;
+    margin-left: 4px;
+    width: 24px;
+    height: 22px;
+    overflow: hidden;
+    cursor: default;
+}
+health-icon.wide {
+    width: 75px;
+}
+health-icon.zoom {
+    animation: zoom .3s;
+    -webkit-animation: zoom .3s;
+    -moz-animation: zoom .3s;
+}
+@-webkit-keyframes zoom {
+    0% { -webkit-transform: scale(1, 1); }
+    50% { -webkit-transform: scale(1.5, 1.5); }
+    100% { -webkit-transform: scale(1, 1);  }
+}
+@-moz-keyframes zoom {
+    0% { -moz-transform: scale(1, 1); }
+    50% { -moz-transform: scale(1.5, 1.5); }
+    100% { -moz-transform: scale(1, 1);  }
+}
+
+@keyframes zoom {
+    0% { transform: scale(1, 1); }
+    50% { transform: scale(1.5, 1.5); }
+    100% { transform: scale(1, 1);  }
+}
+
+health-icon {
+    transition: width .35s;
+}
+
+.healthIcon {
+    font-size: 22px;
+    position: absolute;
+    top: -2px;
+    left: 1px;
+}
+.healthIconBadge {
+    font-size: .9em;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: 3px;
+    left: 26px;
+}
+
+/* NOTE: hardcoding glyphicon glyphs here to make CSS simpler.
+ * Changes to glyphicons or angular could cause this to break */
+.passed .healthIcon:before{
+    color: #0084DB;
+    content: "\e084";
+}
+.failed .healthIcon:before{
+    color: #9C1200;
+    content: "\e101";
+}
+.unknown .healthIcon:before{
+    color: #94C0DB;
+    content: "\e085";
+}
+.not_running .healthIcon:before{
+    color: #AAA;
+    content: "\e082";
+}
+
+
+h3 health-icon {
+    top: 2px;
+    width: 24px !important;
+}
+h3 .healthIconBadge {
+    display: none !important;
+}
+h3 .healthTooltipDetailRow {
+    padding-bottom: 4px;
+}
+h3 .healthTooltipDetailRow .healthIcon {
+    top: -1px;
+}
+
+/* chart styles */
+.nv-axis .tick text,
+.nv-axis .nv-axisMaxMin {
+    fill: #999;
+}
+
+.nv-axis .tick line {
+    stroke-dasharray: 2,2;
+}
+
+/* hide x axis */
+.nv-axis.nv-x .tick{
+    opacity: 0 !important;
+}
+
+/* hide y axis label */
+.nv-axis.nv-y .nv-axislabel{
+    fill: transparent;
+}
+
+.zenchart {
+    margin-left: -45px;
+}
+
+.zenchartContainer {
+    width: calc(50% - 20px);
+    margin: 10px 20px 10px 0;
+    float: left;
+    padding: 20px;
+    box-shadow: rgba(0,0,0,.3) 0 1px 3px;
+    border: solid #EEE 1px;
+}
+.zenchartContainer h4{
+    margin: 0 0 10px 0;
+    display: inline-block;
+}
+.zenchartContainer .graphDescrip {
+    display: inline-block;
+    font-size: .9em;
+    color: #AAA;
+    padding-left: 10px;
+    border-left: solid 1px #CCC;
+    margin-left: 10px;
+}
+
+.graphsControls {
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+.graphsControls .graphControl {
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: solid 1px #CCC;
+}
+.graphsControls .graphControl:last-of-type {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+.graphsControls .graphControl label {
+    font-weight: normal;
+    font-size: .9em;
+    font-color: #AAA;
+    padding-right: 5px;
+}
+.graphsControls .form-control {
+    display: inline-block;
+    width: 120px;
+    padding: 2px;
+    height: auto;
+}
+
+.infoWrapper {
+    position: relative;
+}
+
+
+
+input.ng-invalid.ng-dirty{
+    border-color: #9C1200 !important;
+}
+
+input.ng-invalid:focus.ng-dirty:focus{
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(156, 18, 0, .6) !important;
+}
+
+.error{
+    color: #9C1200;
+}
+
+.btn-link:hover{
+    color: #4F83D1;
+}
+
+.modal-footer{
+    margin-top: 0px;
+}
+
+.note{
+    color: #666666;
+    font-size: .7em;
+    font-weight: bold;
+}
+
+#deployStatus{
+    margin-top: 20px;
+}
+
+.version{
+    font-size: .75em;
+}
+
+.ntsh {
+    color: #CCC;
+    font-style: italic;
+}
+
+input[type=file] {
+    height: auto;
+}
+
+.table-collapse {
+    font-size: 8px;
+    padding: 0px 3px 3px 3px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.messageMeta{
+    width: 30%;
+    float: left;
+}
+
+.messageBody{
+   width: 70%;
+   float: left;
+}
+/* stealthy input fields */
+.stealthInput {
+    display: block;
+    position: relative;
+    border: solid 1px transparent;
+    border-bottom-color: #CCC;
+}
+.stealthInput.disabled {
+    border-bottom-color: transparent;
+    opacity: 1;
+}
+.stealthInput.isEditing {
+    border: solid 1px #CCC;
+    background-color: white;
+}
+
+.stealthInput input {
+    position: relative;
+    border: none;
+    padding: 2px;
+    padding-right: 14px;
+    outline: none;
+    background-color: transparent;
+    text-overflow: ellipsis;
+}
+
+.stealthInput .controls {
+    opacity: 0;
+    top: -1px;
+    position: absolute;
+    padding: 1px 4px 0;
+    right: 0px;
+    background-color: white;
+    border: solid #CCC 1px;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+
+    transition: right .2s, opacity .15s;
+}
+
+.stealthInput.isEditing.isDirty .controls {
+    opacity: 1;
+    right: -30px;
+}
+
+.stealthInput.isSpinning .controls {
+    opacity: 0;
+    right: 0;
+}
+
+.stealthInput .save,
+.stealthInput .cancel {
+    opacity: 0.75;
+    position: relative;
+    text-align: center;
+    font-family: 'Glyphicons Halflings';
+    top: 1px;
+    cursor: pointer;
+}
+.stealthInput .save:hover,
+.stealthInput .cancel:hover {
+    opacity: 1 !important;
+}
+
+.stealthInput .save {
+    color: #325385;
+}
+.stealthInput .cancel {
+    color: #888;
+}
+
+.stealthInput .save::after{
+    content: "\e084";
+}
+.stealthInput .cancel::after {
+    content: "\e014";
+}
+
+.stealthInput .edit {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    text-align: center;
+    font-family: 'Glyphicons Halflings';
+    font-size: .8em;
+    opacity: 0;
+
+    transition: opacity .2s;
+}
+.stealthInput .edit::after {
+    content: "\270F";
+    color: #AAA;
+}
+.stealthInput:hover .edit{
+    opacity: 1;
+}
+.stealthInput.isSpinning .edit,
+.stealthInput.isEditing .edit,
+.stealthInput.isDirty .edit,
+.stealthInput.disabled .edit {
+    opacity: 0;
+}
+
+.stealthInput .dirty {
+    position: absolute;
+    padding: 0 4px;
+    right: 0;
+    top: 2px;
+    text-align: center;
+    opacity: 0;
+    font-weight: bold;
+    color: #325385;
+
+    transition: opacity .2s;
+}
+.stealthInput .dirty::after {
+    content: "!";
+}
+.stealthInput.isDirty .dirty {
+    opacity: 1;
+}
+.stealthInput.isDirty.isEditing .dirty {
+    opacity: 0;
+}
+
+.stealthInput .working{
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    font-family: 'Glyphicons Halflings';
+    opacity: 0;
+
+    transition: opacity .2s;
+    -webkit-animation: spin .7s infinite linear;
+    transform-origin: 50% 55%;
+}
+.stealthInput .working::after {
+    content: "\e031";
+    color: #AAA;
+}
+.stealthInput.isSpinning .working{
+    opacity: 1;
+}
+
+
+@-webkit-keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.modal .big .CodeMirror {
+    height: 500px;
+}
+
+/* sticky service controls */
+.serviceDetails {
+    height: 93px;
+}
+.serviceDetails .serviceControls {
+    height: 45px;
+    position: relative;
+    border-bottom: solid 1px #0084DB;
+    background-color: white;
+    z-index:100;
+    padding: 4px 0;
+}
+.serviceDetails .serviceActions {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+}
+.serviceDetails .serviceTitle {
+    position: relative;
+    margin: 0;
+}
+.serviceDetails .serviceDescription {
+    padding: 4px;
+    color: #999;
+}
+.serviceDetails .serviceBoxGradient {
+    opacity: 0;
+    height: 7px;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
+    transition: opacity .5s;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+}
+.serviceControls.stickied .serviceBoxGradient{
+    opacity: 1;
+}
+
+
+.warningMessage {
+    color: #0084DB;
+    font-size: .9em;
+}
+
+.graphConfigPopover {
+    width: 250px;
+    position: absolute;
+    right: 5px;
+    top: 30px;
+    font-size: .9em;
+    border: solid #CCC 1px;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: white;
+    z-index: 1;
+
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.graphConfigPopover .formLabel {
+    display: block;
+    margin-bottom: 2px;
+}
+.graphConfigPopover .formField {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.graphConfigPopover .startEndWrapper {
+    border: solid 1px #CCC;
+    border-width: 1px 0;
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+.graphConfigPopover:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #CCC;
+}
+.graphConfigPopover:after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+.graphPanel {
+    display: block;
+    position: relative;
+}
+
+
+/* jelly table */
+.jelly-table table {
+    position: relative;
+    clear: both;
+}
+
+.jelly-table .loader{
+    opacity: 1;
+    width: 100%;
+    height: calc(100% - 59px);
+    position: absolute;
+    margin: auto;
+    top: 30px;
+    left: 0;
+    background: rgba(255,255,255,.9) center center url("/static/img/loading.gif") no-repeat;
+    text-align: center;
+    overflow: hidden;
+
+    transition: opacity .25s;
+}
+.jelly-table .loader:hover {
+    background-color: rgba(255,255,255,.9);
+}
+.jelly-table .loader.disappear {
+    opacity: 0;
+}
+.jelly-table .loader td {
+    border: none;
+}
+.jelly-table .loader:hover td {
+    background-color: transparent;
+}
+
+.jelly-table .noData {
+    font-size: 1.4em;
+}
+.jelly-table .noData td {
+    padding: 6px;
+}
+
+.jelly-table .statusBar {
+    color: #CCC;
+    font-size: .9em;
+    padding: 8px 0 0 0;
+    text-align: right;
+    border: none;
+    cursor: default;
+}
+.jelly-table .statusBar ul {
+    margin-bottom: 0;
+}
+.jelly-table .statusBar .entry {
+    display: inline-block;
+    margin: 2px 0 0 16px;
+}
+.jelly-table .statusBar .entry strong {
+    color: #999;
+}
+
+.jelly-table .sort-indicator {
+    display: inline-block;
+}
+
+/* hide pagination */
+.jelly-table [ng-table-pagination="params"] {
+    display: none;
+}
+
+.overcomIndicator {
+    background: #9C1200;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    top: -1px;
+    margin-left: 5px;
+    opacity: 0.0;
+    transition: opacity 1s;
+    visibility: hidden;
+}
+
+.overcomIndicator.bad {
+    opacity: 0.6;
+    visibility: visible;
+}
+
+.overcomText {
+}
+
+.overcomText.bad {
+    color: #9C1200;
+}
+
+
+body.loading {
+    overflow: hidden
+}
+
+.loading_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    background-color: #8EA9D1;
+    text-align: center;
+    opacity: 1;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+
+    transition: opacity 0.2s ease-in;
+}
+.loading_wrapper .animated_logo {
+    transition: transform 0.5s cubic-bezier(.42,-0.47,.38,1.33);
+}
+.loading_wrapper.hide_it {
+    opacity: 0;
+}
+.loading_wrapper.hide_it .animated_logo {
+    transform: scale(0.2, 0.2);
+}
+.loading_wrapper .loading_body {
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+body.no-animation * {
+    transition-property: none !important;
+    -o-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -ms-transition-property: none !important;
+    -webkit-transition-property: none !important;
+
+    transform: none !important;
+    -o-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -webkit-transform: none !important;
+
+    animation: none !important;
+    -o-animation: none !important;
+    -moz-animation: none !important;
+    -ms-animation: none !important;
+    -webkit-animation: none !important;
+}

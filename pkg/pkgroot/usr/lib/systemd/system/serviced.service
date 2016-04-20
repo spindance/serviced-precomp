@@ -1,0 +1,18 @@
+[Unit]
+Description=Zenoss ServiceD
+Requires=network-online.target docker.service
+After=network.target docker.service
+
+[Service]
+Environment=SERVICED_HOME=/opt/serviced SERVICED_MASTER=1 SERVICED_AGENT=1 TZ=UTC HOME=/root
+EnvironmentFile=/etc/default/serviced
+WorkingDirectory=/opt/serviced
+ExecStartPre=/opt/serviced/bin/serviced-systemd.sh pre-start
+ExecStart=/opt/serviced/bin/serviced $SERVICED_OPTS server
+ExecReload=/bin/pkill --signal SIGHUP -f /opt/serviced/bin/serviced
+ExecStopPost=/opt/serviced/bin/serviced-systemd.sh post-stop
+TimeoutStopSec=120
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

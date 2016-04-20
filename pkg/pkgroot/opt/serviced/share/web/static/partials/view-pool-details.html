@@ -1,0 +1,76 @@
+<div ng-show="loggedIn" ng-include="'/static/partials/top-nav.html'" class="navWrapper"></div>
+
+<div class="serviceDetails">
+    <div class="serviceControls" sticky sticky-class="stickied">
+        <h2 class="serviceTitle">
+            <span> {{currentPool.id}}</span>
+        </h2>
+        <div class="serviceBoxGradient"></div>
+    </div>
+
+    <div class="serviceDescription" style="display: flex;">
+        <div class="vertical-info">
+          <label for="pool_data_id" translate>label_pool_id</label>
+          <div id="pool_data_id">{{currentPool.id | cut:true:50}}</div>
+        </div>
+
+        <div class="vertical-info">
+          <label for="pool_data_core_limit" translate>core_capacity</label>
+          <div id="pool_data_core_limit">{{currentPool.model.CoreCapacity}}</div>
+        </div>
+
+        <div class="vertical-info">
+          <label for="pool_data_memory_limit" translate>memory_capacity</label>
+          <div id="pool_data_memory_limit">{{currentPool.model.MemoryCapacity | toGB}}</div>
+        </div>
+
+        <div class="vertical-info">
+          <label for="pool_data_created_at" translate>label_pool_created_at</label>
+          <div id="pool_data_created_at">{{currentPool.model.CreatedAt | date : 'medium'}}</div>
+        </div>
+
+        <div class="vertical-info">
+          <label for="pool_data_updated_at" translate>updated_at</label>
+          <div id="pool_data_updated_at">{{currentPool.model.UpdatedAt | date : 'medium'}}</div>
+        </div>
+    </div>
+</div><br>
+
+<h3 class="pull-left" translate>label_virtual_ip_addresses</h3>
+<div class="control-buttons pull-right">
+  <span class="add-control">
+    <button class="btn-link" ng-click="modalAddVirtualIp(currentPool)">
+      <span class="glyphicon glyphicon-plus-sign"></span>
+      <span translate>modal_add_virtual_ip</span>
+    </button>
+  </span>
+</div>
+
+<!-- VIRTUAL IPS -->
+<table jelly-table data-data="currentPool.model.VirtualIPs" data-config="virtualIPsTable" class="table side-flush">
+  <tbody>
+    <tr ng-repeat="address in $data">
+      <td data-title="'pool_tbl_virtual_ip_address_ip'|translate" sortable="'IP'">{{address.IP}}</td>
+      <td data-title="'pool_tbl_virtual_ip_address_netmask'|translate" sortable="'Netmask'">{{address.Netmask}}</td>
+      <td data-title="'pool_tbl_virtual_ip_address_bind_interface'|translate" sortable="'BindInterface'">{{address.BindInterface}}</td>
+      <td data-title="'pool_tbl_virtual_ip_address_action'|translate">
+          <button ng-click="clickRemoveVirtualIp(address)" class="btn btn-link action">
+              <i class="glyphicon glyphicon-remove-sign"></i>
+              <span translate>label_delete</span>
+          </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="pull-left" translate>hosts</h3>
+<table jelly-table data-data="hosts" data-config="hostsTable" class="table side-flush">
+  <tbody>
+    <tr ng-repeat="host in $data">
+      <td data-title="'label_host_id'|translate" sortable="'name'" ng-click="clickHost(host.id)" class="link">{{host.name}}</td>
+      <td data-title="'label_host_memory'|translate" sortable="'model.Memory|toGB'">{{host.model.Memory | toGB}}</td>
+      <td data-title="'label_host_cores'|translate" sortable="'model.Cores'">{{host.model.Cores}}</td>
+      <td data-title="'label_host_kernel_version'|translate" sortable="'model.KernelVersion'">{{host.model.KernelVersion}}</td>
+    </tr>
+  </tbody>
+</table>

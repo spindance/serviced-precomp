@@ -1,0 +1,24 @@
+<p>
+    <strong>{{template.Name}}</strong> {{'content_wizard_configured_is_config'|translate}} <strong>{{install.poolID}}</strong>.
+</p>
+
+<div>
+    <label for="deploymentID" class="control-label" translate>deployed_tbl_deployment_id</label>
+
+    <input class="form-control" type="text" ng-model="install.deploymentID" name="deploymentID"
+           id="deploymentID" placeholder="{{'placeholder_deployment_id' | translate}}" />
+
+    <div id="deployWizardNotifications" class="error hide">
+        <span class="dialogIcon glyphicon glyphicon-remove-sign"></span>
+        <span id="deployWizardNotificationsContent"></span>
+    </div>
+
+    <!-- this section is for reporting the status of deployment -->
+    <div id="deployStatus" style="display: none;">
+        <span class="dialogIcon glyphicon glyphicon-info-sign"></span>
+        <span id="deployStatusText"></span>
+        <div class="progress progress-striped active">
+            <div class="progress-bar" style="width: 100%;"></div>
+        </div>
+    </div>
+</div>

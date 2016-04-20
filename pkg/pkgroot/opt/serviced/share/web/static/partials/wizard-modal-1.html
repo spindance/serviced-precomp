@@ -1,0 +1,12 @@
+<p ng-show="no_detected_hosts" translate>content_wizard_no_hosts</p>
+<p ng-hide="no_detected_hosts" translate>content_wizard_some_hosts</p>
+
+<div ng-repeat="host in detected_hosts" class="block-data">
+  <label>
+    <input type="checkbox" ng-model="host.selected"/>
+    {{host.Name}}
+  </label>
+  <p>{{host.IpAddr}}, {{host.Id}}</p>
+</div>
+
+<button class="btn btn-default" ng-click="addHostStart()" translate>btn_add_host</button>
